@@ -1,0 +1,23 @@
+# 作者：算个文科生吧
+# 联系方式：lijinghailjh@163.com
+# 作用：performance 档位相机参数（低分辨率、关闭点云，适合省 CPU）
+---
+orbbec_ros:
+  camera_parameters:
+    deivce:
+      uvc_backend: "v4l2"
+      enumerate_net_device: false
+    color:
+      enable_color: true
+      color_width: 424
+      color_height: 240
+      color_fps: 15
+    depth:
+      enable_depth: true
+      depth_width: 424
+      depth_height: 240
+      depth_fps: 15
+      depth_registration: false
+      align_mode: "SW"
+    point_cloud:
+      enable_point_cloud: false

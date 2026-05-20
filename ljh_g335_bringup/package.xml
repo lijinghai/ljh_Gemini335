@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- 作者：算个文科生吧 | 联系方式：lijinghailjh@163.com -->
+<!-- 作用：ljh_g335_bringup 包清单，声明对 orbbec_camera、rviz2 等运行时依赖 -->
+<package format="3">
+  <name>ljh_g335_bringup</name>
+  <version>1.0.0</version>
+  <description>Bringup for Orbbec Gemini 335 (ljh_G335 workspace)</description>
+  <maintainer email="lijinghailjh@163.com">算个文科生吧</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>orbbec_camera</exec_depend>
+  <exec_depend>orbbec_camera_msgs</exec_depend>
+  <exec_depend>orbbec_description</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>rviz_default_plugins</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

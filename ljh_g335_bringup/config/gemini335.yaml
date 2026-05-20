@@ -1,0 +1,55 @@
+# 作者：算个文科生吧
+# 联系方式：lijinghailjh@163.com
+# 作用：balanced 档位相机参数（640×480、彩色点云、SW 对齐、深度滤波）
+# balanced：细密点云 + 彩色点云，适合 RViz 观察细节
+---
+orbbec_ros:
+  camera_parameters:
+    general:
+      camera_model: "gemini330_series"
+    deivce:
+      enumerate_net_device: false
+      uvc_backend: "libuvc"
+    color:
+      enable_color: true
+      color_width: 640
+      color_height: 480
+      color_fps: 15
+    depth:
+      enable_depth: true
+      depth_width: 640
+      depth_height: 480
+      depth_fps: 15
+      depth_registration: true
+      align_mode: "SW"
+      filter:
+        noise_removal_filter:
+          enable_noise_removal_filter: true
+          noise_removal_filter_min_diff: 200
+          noise_removal_filter_max_size: 60
+        spatial_filter:
+          enable_spatial_filter: true
+          # 使用 -1 表示设备默认；magnitude/radius 过大可能无效
+          spatial_filter_magnitude: -1
+          spatial_filter_radius: -1
+        temporal_filter:
+          enable_temporal_filter: true
+          # diff_scale 合法范围 [0.1, 1]，勿填 8 等大值
+          temporal_filter_diff_threshold: -1.0
+          temporal_filter_weight: -1.0
+        soft_filter:
+          enable_soft_filter: true
+      laser:
+        enable_laser: true
+    leftir:
+      enable_left_ir: false
+    rightir:
+      enable_right_ir: false
+    point_cloud:
+      enable_point_cloud: true
+      enable_colored_point_cloud: true
+      point_cloud_qos: "default"
+      ordered_pc: true
+    advanced:
+      enable_frame_sync: true
+      diagnostic_period: 3.0
